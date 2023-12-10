@@ -51,7 +51,7 @@ export default function Createpost() {
       user: {
         name: "Saksham",
         photo:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3V7HJV_rUleIxRHBW8tpqfyBEZQ4IvTvzew&usqp=CAU",
+          "https://i.pinimg.com/736x/ae/ec/c2/aeecc22a67dac7987a80ac0724658493.jpg",
       },
       date: Time,
       likes: 0,
