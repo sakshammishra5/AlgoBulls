@@ -1,7 +1,7 @@
-import CreatePost from "../Components/CreatePost";
+import Createpost from "../Components/Createpost";
 
 const Allposts = () => {
-  return <CreatePost/>
+  return <Createpost/>
 };
 
 export default Allposts;
