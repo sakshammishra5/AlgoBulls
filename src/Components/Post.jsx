@@ -27,14 +27,6 @@ const Post = ({
     setShowComments((prev) => !prev);
   }
 
-  // function handleOnClick(index) {
-  //   setPostArray((prev) => {
-  //     prev.map((item, i) =>
-  //       index == i ? { ...item, bookmarks: !item.bookmarks } : item
-  //     );
-  //   });
-  // }
-
   function commentHandler(e) {
     const { name, value } = e.target;
     setCommentContent((prev) => ({
@@ -69,9 +61,7 @@ const Post = ({
             <span className="text-xs text-black ml-1">{likes}</span>
           </span>
           <span
-            className={`flex items-center ${bookmarks ? "bg-teal-400":"" }`}
-            // onClick={() => handleOnClick(index) //*}
-          >
+            className={`flex items-center ${bookmarks ? "bg-teal-400":"" }`}>
             <CiBookmark />
           </span>
         </div>
