@@ -1,5 +1,5 @@
 import { Button, Modal } from "flowbite-react";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect} from "react";
 import { BsFilePost } from "react-icons/bs";
 import Post from "./Post";
 import { getPost } from "../api";

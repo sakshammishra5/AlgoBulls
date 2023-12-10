@@ -1,16 +1,7 @@
-import React, { useState } from 'react'
-import Createpost from '../Components/CreatePost'
-import { getPost } from '../api'
-import Post from '../Components/Post'
+import CreatePost from "../Components/CreatePost";
 
 const Allposts = () => {
-  // const [allPost,setAllPost]=useState(getPost())
-  // console.log(getPost())
-  return (
-    <>
-    <Createpost/>
-    </>
-  )
-}
+  return <CreatePost/>
+};
 
-export default Allposts
+export default Allposts;

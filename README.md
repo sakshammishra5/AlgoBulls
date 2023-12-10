@@ -1,5 +1,5 @@
 ````markdown
-# Fyle Internship Challenge 23
+# Algo Bulls 23
 
 This project is a React application built with Vite.
 
