@@ -14,7 +14,7 @@ Before you begin, ensure you have met the following requirements:
 To clone this project, use the following command in your terminal:
 
 ```bash
-git clone https://github.com/sakshammishra5/fyle-internship-challenge-23
+git clone https://github.com/sakshammishra5/AlgoBulls
 ```
 ````
 
@@ -46,7 +46,7 @@ npm run test
 
 ## Deployment
 
-The application is deployed and can be accessed at [https://fyle-internship-challenge-23-virid.vercel.app](https://fyle-internship-challenge-23-virid.vercel.app).
+The application is deployed and can be accessed at [algo-bulls-xi.vercel.app](algo-bulls-xi.vercel.app).
 
 Enjoy coding!
 
