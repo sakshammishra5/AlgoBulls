@@ -45,7 +45,7 @@ const SignIn = () => {
                 <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
                   <div>
                     <label
-                      for="username"
+                      htmlFor="username"
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                     >
                       Your username
@@ -62,7 +62,7 @@ const SignIn = () => {
                   </div>
                   <div>
                     <label
-                      for="password"
+                      htmlFor="password"
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                     >
                       Password

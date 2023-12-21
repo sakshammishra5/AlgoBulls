@@ -1,0 +1,89 @@
+[
+  {
+      "id": "1",
+      "username": "saksham",
+      "password": 123,
+      "user": {
+          "name": "saksham",
+          "photo": "https://i.pinimg.com/736x/ae/ec/c2/aeecc22a67dac7987a80ac0724658493.jpg"
+      },
+      "date": "2023-12-02",
+      "content": "This is a post content.",
+      "isLiked": true,
+      "likes": 5,
+      "bookmarks": true,
+      "isOwner": true,
+      "comments": [
+          {
+              "id": 1,
+              "userId": 2,
+              "user": "Alice",
+              "content": "Great post!"
+          },
+          {
+              "id": 2,
+              "userId": 3,
+              "user": "Bob",
+              "content": "I agree!"
+          }
+      ]
+  },
+  {
+      "id": "2",
+      "username": "sita",
+      "password": 123,
+      "user": {
+          "name": "saksham",
+          "photo": "https://i.pinimg.com/736x/ae/ec/c2/aeecc22a67dac7987a80ac0724658493.jpg"
+      },
+      "date": "2023-12-02",
+      "content": "This is a post content.",
+      "isLiked": true,
+      "likes": 5,
+      "bookmarks": false,
+      "isOwner": true,
+      "comments": [
+          {
+              "id": 1,
+              "userId": 2,
+              "user": "Alice",
+              "content": "Great post!"
+          },
+          {
+              "id": 2,
+              "userId": 3,
+              "user": "Bob",
+              "content": "I agree!"
+          }
+      ]
+  },
+  {
+      "id": "3",
+      "username": "geeta",
+      "password": 123,
+      "user": {
+          "name": "saksham",
+          "photo": "https://i.pinimg.com/736x/ae/ec/c2/aeecc22a67dac7987a80ac0724658493.jpg"
+      },
+      "date": "2023-12-02",
+      "content": "This is a post content.",
+      "isLiked": false,
+      "likes": 5,
+      "bookmarks": false,
+      "isOwner": true,
+      "comments": [
+          {
+              "id": 1,
+              "userId": 2,
+              "user": "Alice",
+              "content": "Great post!"
+          },
+          {
+              "id": 2,
+              "userId": 3,
+              "user": "Bob",
+              "content": "I agree!"
+          }
+      ]
+  }
+]

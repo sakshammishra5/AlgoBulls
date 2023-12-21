@@ -1,9 +1,8 @@
 import { Button, Modal } from "flowbite-react";
-import { useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import { BsFilePost } from "react-icons/bs";
 import Post from "./Post";
 import { getPost } from "../api";
-
 
 export default function Createpost() {
   const [openModal, setOpenModal] = useState(false);
@@ -39,7 +38,7 @@ export default function Createpost() {
   function handleOnSubmit(e) {
     e.preventDefault();
     const tempPost = post;
-    setPostArray((prev) => [tempPost,...prev]);
+    setPostArray((prev) => [tempPost, ...prev]);
   }
 
   function handleOnChange(e) {
@@ -115,7 +114,7 @@ export default function Createpost() {
           </Modal>
         </div>
         <div className="flex justify-center  mt-4 flex-col mx-auto items-center">
-          {postArray.map((item,index) => (
+          {postArray.map((item, index) => (
             <Post
               user={item.user}
               comments={item.comments}

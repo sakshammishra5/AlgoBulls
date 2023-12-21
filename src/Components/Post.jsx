@@ -45,7 +45,7 @@ const Post = ({
 
   return (
     <>
-      <div className="w-2/5 bg-white border border-gray-400 mb-4 rounded-xl">
+      <div data-testid="postCard" className="w-2/5 bg-white border border-gray-400 mb-4 rounded-xl">
         <div className="flex items-center font-semibold ml-5 mt-4">
           <img className="w-9 rounded-full" src={user.photo} alt="" />
           <p className="ml-3">{user.name}</p>
