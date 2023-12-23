@@ -5,8 +5,13 @@ import { CiBookmark } from "react-icons/ci";
 import { CgProfile } from "react-icons/cg";
 import { FaPlus } from "react-icons/fa";
 import { FaMinus } from "react-icons/fa";
+import { CiHeart } from "react-icons/ci";
+import { FaBookmark } from "react-icons/fa";
 
 const Post = ({
+  postId,
+  isLiked,
+  isBookmarked,
   user,
   comments,
   likes,
@@ -35,17 +40,40 @@ const Post = ({
     }));
   }
 
+  const handleLike = (pId) => {
+    setPostArray((prevPosts) =>
+      prevPosts.map((post) =>
+        post.id == pId
+          ? {
+              ...post,
+              isLiked: !post.isLiked,
+              likes: post.isLiked ? post.likes - 1 : post.likes + 1,
+            }
+          : post
+      )
+    );
+  };
 
+  const handleBookmark = (pId) => {
+    setPostArray((prevPosts) =>
+      prevPosts.map((post) =>
+        post.id === pId ? { ...post, bookmarks: !post.bookmarks } : post
+      )
+    );
+  };
 
   function onsubmitComment(e) {
     e.preventDefault();
-    let tempComment=commentContent
-    setComments((prev) => [tempComment,...prev]);
+    let tempComment = commentContent;
+    setComments((prev) => [tempComment, ...prev]);
   }
 
   return (
     <>
-      <div data-testid="postCard" className="w-2/5 bg-white border border-gray-400 mb-4 rounded-xl">
+      <div
+        data-testid="postCard"
+        className="w-2/5 bg-white border border-gray-400 mb-4 rounded-xl"
+      >
         <div className="flex items-center font-semibold ml-5 mt-4">
           <img className="w-9 rounded-full" src={user.photo} alt="" />
           <p className="ml-3">{user.name}</p>
@@ -56,13 +84,18 @@ const Post = ({
             <HiOutlineChatBubbleOvalLeft />
             <span className="text-xs text-black ml-1">{comments.length}</span>
           </span>
-          <span className="flex items-center">
-            <FcLike />
+          <span
+            className="flex items-center"
+            onClick={() => handleLike(postId)}
+          >
+            {isLiked ? <FcLike /> : <CiHeart />}
             <span className="text-xs text-black ml-1">{likes}</span>
           </span>
           <span
-            className={`flex items-center ${bookmarks ? "bg-teal-400":"" }`}>
-            <CiBookmark />
+            className="flex items-center"
+            onClick={() => handleBookmark(postId)}
+          >
+           {isBookmarked?<FaBookmark/>:<CiBookmark />}
           </span>
         </div>
         <div className="flex justify-center items-center bg-slate-50 mt-2 border border-gray-700 cursor-pointer">
@@ -89,7 +122,12 @@ const Post = ({
                 onChange={commentHandler}
                 className="ml-5 my-2 rounded-lg"
               />
-              <button type="submit" className="p-1 bg-black text-white rounded-sm ml-5">Add</button>
+              <button
+                type="submit"
+                className="p-1 bg-black text-white rounded-sm ml-5"
+              >
+                Add
+              </button>
             </form>
           </div>
         )}

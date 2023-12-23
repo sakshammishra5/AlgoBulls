@@ -7,7 +7,7 @@ createServer({
 
   seeds(server) {
     server.create("user", {
-      id: 1,
+      id: 0,
       username: "saksham",
       password: 123,
       user: {
@@ -29,7 +29,7 @@ createServer({
       // Add more posts as needed
     }),
       server.create("user", {
-        id: 2,
+        id: 1,
         username: "sita",
         password: 123,
         user: {
@@ -51,7 +51,7 @@ createServer({
         // Add more posts as needed
       }),
       server.create("user", {
-        id: 3,
+        id: 2,
         username: "geeta",
         password: 123,
         user: {

@@ -47,12 +47,14 @@ export default function Createpost() {
     setPost((prev) => ({
       ...prev,
       [name]: value,
+      id:postArray.length+1,
       user: {
         name: "Saksham",
         photo:
           "https://i.pinimg.com/736x/ae/ec/c2/aeecc22a67dac7987a80ac0724658493.jpg",
       },
       date: Time,
+      isLiked:false,
       likes: 0,
       bookmarks: false,
       isOwner: true,
@@ -116,6 +118,9 @@ export default function Createpost() {
         <div className="flex justify-center  mt-4 flex-col mx-auto items-center">
           {postArray.map((item, index) => (
             <Post
+             postId={item.id}
+             isLiked={item.isLiked}
+             isBookmarked={item.bookmarks}
               user={item.user}
               comments={item.comments}
               likes={item.likes}
