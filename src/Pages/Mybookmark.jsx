@@ -1,12 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { getBookMarkedPost } from "../api";
 import Post from "../Components/Post";
+import { useSelector } from "react-redux";
 
 const Mybookmark = () => {
   const [bookmarkedPost, setBookmarkedPost] = useState([]);
   useEffect(() => {
     getBookMarkedPost().then((data) => setBookmarkedPost(data));
   }, []);
+
+  const yoPost=useSelector((state)=>state.posts.bookmarkedPosts)
+  console.log(yoPost);
+  console.log(yoPost[yoPost.length-1]);
+
+
   return (
     <>
       <div className="w-full flex flex-col items-center justify-center">

@@ -3,15 +3,30 @@ import { useState, useEffect } from "react";
 import { BsFilePost } from "react-icons/bs";
 import Post from "./Post";
 import { getPost } from "../api";
+import {
+  addPosts,
+  addbookmarkedPosts,
+  addlikedPosts,
+} from "../utils/postSlice";
+import { useDispatch } from "react-redux";
 
 export default function Createpost() {
   const [openModal, setOpenModal] = useState(false);
   const [post, setPost] = useState({ content: "", date: "", Like: 0 });
   const [postArray, setPostArray] = useState([]);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    getPost().then((data) => setPostArray(data));
+    getPost().then((data) => {
+      setPostArray(data), dispatch(addPosts(data));
+    });
   }, []);
+
+  const likedArr = postArray.filter((item) => item.isLiked == true);
+  dispatch(addlikedPosts(likedArr));
+
+  const bookmarkedArr = postArray.filter((item) => item.bookmarks == true);
+  dispatch(addbookmarkedPosts(bookmarkedArr));
 
   console.log(postArray);
 
@@ -47,14 +62,14 @@ export default function Createpost() {
     setPost((prev) => ({
       ...prev,
       [name]: value,
-      id:postArray.length+1,
+      id: postArray.length + 1,
       user: {
         name: "Saksham",
         photo:
           "https://i.pinimg.com/736x/ae/ec/c2/aeecc22a67dac7987a80ac0724658493.jpg",
       },
       date: Time,
-      isLiked:false,
+      isLiked: false,
       likes: 0,
       bookmarks: false,
       isOwner: true,
@@ -118,9 +133,9 @@ export default function Createpost() {
         <div className="flex justify-center  mt-4 flex-col mx-auto items-center">
           {postArray.map((item, index) => (
             <Post
-             postId={item.id}
-             isLiked={item.isLiked}
-             isBookmarked={item.bookmarks}
+              postId={item.id}
+              isLiked={item.isLiked}
+              isBookmarked={item.bookmarks}
               user={item.user}
               comments={item.comments}
               likes={item.likes}
