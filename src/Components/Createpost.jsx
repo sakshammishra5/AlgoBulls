@@ -8,10 +8,10 @@ import {
   addbookmarkedPosts,
   addlikedPosts,
 } from "../utils/postSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function Createpost() {
-  
+  const allPosts = useSelector((state) => state.posts.allPosts);
   const [openModal, setOpenModal] = useState(false);
   const [post, setPost] = useState({ content: "", date: "", Like: 0 });
   const [postArray, setPostArray] = useState([]);
@@ -19,7 +19,7 @@ export default function Createpost() {
 
   useEffect(() => {
     getPost().then((data) => {
-      setPostArray(data), dispatch(addPosts(data));
+      dispatch(addPosts(data)),setPostArray(data);
     });
   }, []);
 
@@ -28,8 +28,6 @@ export default function Createpost() {
 
   const bookmarkedArr = postArray.filter((item) => item.bookmarks == true);
   dispatch(addbookmarkedPosts(bookmarkedArr));
-
-  console.log(postArray);
 
   const months = [
     "January",

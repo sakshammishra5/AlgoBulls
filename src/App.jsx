@@ -2,7 +2,8 @@ import React, { createContext, useEffect, useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import Slidebar from "./Components/Slidebar";
 import { store } from "./utils/store";
-import { Provider } from "react-redux";
+import { Provider, useDispatch } from "react-redux";
+
 
 const App = () => {
   const [login, SetLogin] = useState(localStorage.getItem("loggedin"));
@@ -24,5 +25,6 @@ const App = () => {
     </>
   );
 };
+
 
 export default App;
