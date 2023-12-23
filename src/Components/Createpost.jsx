@@ -5,6 +5,7 @@ import Post from "./Post";
 import { getPost } from "../api";
 
 export default function Createpost() {
+  
   const [openModal, setOpenModal] = useState(false);
   const [post, setPost] = useState({ content: "", date: "", Like: 0 });
   const [postArray, setPostArray] = useState([]);
